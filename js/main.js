@@ -92,4 +92,22 @@
     });
     thumb.classList.add('product__thumb--active');
   };
+
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll('.faq__question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.faq__item');
+      var isOpen = item.classList.contains('faq__item--open');
+
+      document.querySelectorAll('.faq__item--open').forEach(function (openItem) {
+        openItem.classList.remove('faq__item--open');
+        openItem.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        item.classList.add('faq__item--open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
 })();
