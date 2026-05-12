@@ -1,0 +1,180 @@
+/* ============================================================
+   Article / Editorial Page Styles
+   ============================================================ */
+
+/* ---------- Hero ---------- */
+.art-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.art-hero__bg { position: absolute; inset: 0; z-index: 0; }
+.art-hero__bg img { width: 100%; height: 100%; object-fit: cover; }
+.art-hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.6) 40%, rgba(10,10,10,0.2) 100%);
+}
+.art-hero__content { position: relative; z-index: 1; max-width: 720px; padding: 0 0 5rem 5rem; }
+.art-hero__label {
+  font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+}
+.art-hero__title {
+  font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700; line-height: 1.15; color: var(--white); margin-bottom: 1rem;
+}
+.art-hero__title em { font-style: italic; color: var(--gold); }
+.art-hero__subtitle {
+  font-family: var(--font-serif); font-size: 1.15rem; font-style: italic;
+  color: rgba(255,255,255,0.6); line-height: 1.6;
+}
+
+/* ---------- Article body ---------- */
+.art-body { padding: 4rem 0; background: var(--black); }
+.art-body .container { max-width: 780px; }
+
+.art-scan {
+  display: flex; align-items: center; gap: 1.5rem;
+  padding: 1.5rem 2rem; margin-bottom: 3rem;
+  border: 1px solid rgba(197,164,78,0.2); border-radius: 4px;
+  background: rgba(197,164,78,0.04);
+}
+.art-scan__img { width: 90px; height: auto; border-radius: 3px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); flex-shrink: 0; }
+.art-scan__text { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+.art-scan__text strong {
+  display: block; color: var(--gold); font-size: 0.72rem;
+  letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.25rem;
+}
+
+.art-chapter { display: flex; align-items: center; gap: 1rem; margin: 3rem 0 1.5rem; }
+.art-chapter__num {
+  width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif); font-size: 0.85rem; color: var(--gold); flex-shrink: 0;
+}
+.art-chapter__title { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 600; color: var(--white); }
+
+.art-body p {
+  font-family: var(--font-sans); font-size: 1.02rem; line-height: 1.85;
+  color: rgba(255,255,255,0.72); margin-bottom: 1.4rem;
+}
+.art-dropcap::first-letter {
+  font-family: var(--font-serif); float: left; font-size: 3.8rem;
+  line-height: 0.8; padding: 0.1em 0.12em 0 0; color: var(--gold); font-weight: 700;
+}
+
+.art-quote { position: relative; margin: 3rem 0; padding: 2rem 2.5rem; border-left: 3px solid var(--gold); }
+.art-quote blockquote { font-family: var(--font-serif); font-size: 1.3rem; font-style: italic; line-height: 1.6; color: var(--white); margin: 0; }
+.art-quote cite {
+  display: block; margin-top: 0.75rem; font-family: var(--font-sans); font-size: 0.78rem;
+  font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold);
+}
+
+.art-image-break { margin: 3rem -2rem; position: relative; overflow: hidden; border-radius: 4px; }
+.art-image-break img { width: 100%; height: 300px; object-fit: cover; display: block; filter: brightness(0.7); }
+
+.art-product-teaser {
+  display: flex; align-items: center; gap: 1.5rem;
+  padding: 1.5rem 2rem; margin: 2.5rem 0;
+  border: 1px solid rgba(197,164,78,0.15); border-radius: 4px;
+  background: rgba(197,164,78,0.03); transition: border-color 0.3s;
+}
+.art-product-teaser:hover { border-color: rgba(197,164,78,0.4); }
+.art-product-teaser__img { width: 80px; height: 80px; object-fit: contain; flex-shrink: 0; }
+.art-product-teaser__info { flex: 1; }
+.art-product-teaser__info strong { display: block; font-size: 0.95rem; color: var(--white); margin-bottom: 0.2rem; }
+.art-product-teaser__info span { font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+.art-product-teaser .btn { flex-shrink: 0; }
+
+/* ---------- Product CTA in article ---------- */
+.art-product-cta {
+  margin: 3rem 0; padding: 2.5rem 2rem;
+  border: 1px solid rgba(197,164,78,0.2); border-radius: 4px;
+  background: rgba(197,164,78,0.04); text-align: center;
+}
+.art-product-cta__label {
+  font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;
+}
+.art-product-cta__title {
+  font-family: var(--font-serif); font-size: 1.4rem; font-weight: 600;
+  color: var(--white); margin-bottom: 0.3rem;
+}
+.art-product-cta__price {
+  font-family: var(--font-serif); font-size: 1.8rem; color: var(--gold); margin-bottom: 0.3rem;
+}
+.art-product-cta__sub {
+  font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-bottom: 1.5rem;
+}
+
+/* ---------- Final CTA ---------- */
+.art-cta {
+  text-align: center; padding: 4rem 2rem; margin-top: 3rem;
+  border-top: 1px solid rgba(197,164,78,0.15);
+}
+.art-cta blockquote {
+  font-family: var(--font-serif); font-size: 1.5rem; font-style: italic;
+  line-height: 1.5; color: var(--white); max-width: 600px; margin: 0 auto 2rem;
+}
+.art-cta cite {
+  display: block; font-family: var(--font-sans); font-style: normal; font-size: 0.75rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem;
+}
+
+/* ---------- "The Secret" section on landing page ---------- */
+.press { position: relative; padding: 6rem 0; overflow: hidden; text-align: center; }
+.press__bg { position: absolute; inset: 0; z-index: 0; }
+.press__bg-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.25) saturate(0.6); }
+.press__bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.55) 30%, rgba(10,10,10,0.55) 70%, rgba(10,10,10,0.95) 100%);
+}
+.press__content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+.press__label {
+  font-family: var(--font-sans); font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+}
+.press__divider { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 1.5rem; opacity: 0.5; }
+.press__title {
+  font-family: var(--font-serif); font-size: clamp(1.6rem,3.5vw,2.4rem);
+  font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 1.5rem;
+}
+.press__quote {
+  font-family: var(--font-serif); font-size: 1.05rem; font-style: italic;
+  line-height: 1.7; color: rgba(255,255,255,0.6); margin-bottom: 1rem;
+  max-width: 520px; margin-left: auto; margin-right: auto;
+}
+.press__desc { font-family: var(--font-sans); font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.6; margin-bottom: 2rem; }
+.press__scan {
+  display: inline-block; position: relative; margin-bottom: 2rem;
+  text-decoration: none; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+}
+.press__scan:hover { transform: translateY(-4px) scale(1.02); }
+.press__scan-img {
+  width: 120px; height: auto; border-radius: 4px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(197,164,78,0.15), 0 0 60px rgba(197,164,78,0.06);
+}
+.press__scan-badge {
+  display: block; margin-top: 0.6rem; font-family: var(--font-sans);
+  font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--gold); opacity: 0.7;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .art-hero { min-height: 60vh; }
+  .art-hero__content { padding: 0 1.5rem 3rem; }
+  .art-chapter__title { font-size: 1.3rem; }
+  .art-quote { padding: 1.5rem; }
+  .art-quote blockquote { font-size: 1.1rem; }
+  .art-image-break { margin: 2rem -1rem; }
+  .art-image-break img { height: 200px; }
+  .art-product-teaser { flex-direction: column; text-align: center; }
+  .art-scan { flex-direction: column; text-align: center; }
+  .press { padding: 4rem 0; }
+  .press__scan-img { width: 100px; }
+}

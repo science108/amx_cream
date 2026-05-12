@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — AMX Luxury</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+<body class="page--dark">
+
+  <nav class="nav nav--scrolled">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">AMX <span>Luxury</span></a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Back to Store</a></li>
+      </ul>
+      <div class="lang-switch">
+        <button class="lang-switch__btn lang-switch__btn--active" data-lang="en">EN</button>
+        <button class="lang-switch__btn" data-lang="pl">PL</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="checkout">
+    <div class="container">
+      <div class="checkout__grid">
+        <div class="checkout__forms" id="checkoutForms">
+
+          <div class="checkout__form-section">
+            <h2 id="coSec1">Contact</h2>
+            <div class="checkout__account-toggle" id="accountToggle">
+              <button class="toggle-btn toggle-btn--active" data-mode="guest" id="btnGuest">Guest</button>
+              <button class="toggle-btn" data-mode="account" id="btnAccount">Create Account</button>
+            </div>
+            <div class="form-row form-row--full">
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="you@example.com" required>
+              </div>
+            </div>
+            <div class="checkout__pass-row" id="passRow">
+              <p class="checkout__pass-hint" id="passHint">Save your details for faster checkout next time.</p>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="password" id="coLblPass">Password</label>
+                  <input type="password" id="password" placeholder="Min. 8 characters" minlength="8">
+                </div>
+                <div class="form-field">
+                  <label for="passwordConfirm" id="coLblPassConfirm">Confirm password</label>
+                  <input type="password" id="passwordConfirm" placeholder="">
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="fname" id="coLblFirst">First name</label>
+                <input type="text" id="fname" required>
+              </div>
+              <div class="form-field">
+                <label for="lname" id="coLblLast">Last name</label>
+                <input type="text" id="lname" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="checkout__form-section">
+            <h2 id="coSec2">Shipping Address</h2>
+            <div class="form-row form-row--full">
+              <div class="form-field">
+                <label for="address" id="coLblAddr">Address</label>
+                <input type="text" id="address" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="city" id="coLblCity">City</label>
+                <input type="text" id="city" required>
+              </div>
+              <div class="form-field">
+                <label for="zip" id="coLblZip">ZIP / Postal code</label>
+                <input type="text" id="zip" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="country" id="coLblCountry">Country</label>
+                <select id="country">
+                  <optgroup label="Poland" id="ogPoland">
+                    <option value="PL" selected>Poland</option>
+                  </optgroup>
+                  <optgroup label="Europe" id="ogEurope">
+                    <option value="DE">Germany</option>
+                    <option value="NL">Netherlands</option>
+                    <option value="FR">France</option>
+                    <option value="AT">Austria</option>
+                    <option value="BE">Belgium</option>
+                    <option value="IT">Italy</option>
+                    <option value="ES">Spain</option>
+                    <option value="PT">Portugal</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="CH">Switzerland</option>
+                    <option value="SE">Sweden</option>
+                    <option value="DK">Denmark</option>
+                    <option value="NO">Norway</option>
+                    <option value="FI">Finland</option>
+                    <option value="IE">Ireland</option>
+                    <option value="CZ">Czech Republic</option>
+                    <option value="HU">Hungary</option>
+                    <option value="GR">Greece</option>
+                    <option value="RO">Romania</option>
+                    <option value="BG">Bulgaria</option>
+                    <option value="HR">Croatia</option>
+                    <option value="SK">Slovakia</option>
+                    <option value="LT">Lithuania</option>
+                    <option value="LV">Latvia</option>
+                    <option value="EE">Estonia</option>
+                    <option value="SI">Slovenia</option>
+                    <option value="LU">Luxembourg</option>
+                  </optgroup>
+                  <optgroup label="Rest of World" id="ogWorld">
+                    <option value="US">United States</option>
+                    <option value="MX">Mexico</option>
+                    <option value="IN">India</option>
+                    <option value="PK">Pakistan</option>
+                    <option value="SA">Saudi Arabia</option>
+                    <option value="AE">United Arab Emirates</option>
+                    <option value="ZA">South Africa</option>
+                    <option value="NG">Nigeria</option>
+                    <option value="OTHER">Other</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="phone" id="coLblPhone">Phone (optional)</label>
+                <input type="tel" id="phone">
+              </div>
+            </div>
+            <div class="shipping-option" id="shippingOption" style="display:none">
+              <label class="shipping-option__label">
+                <input type="radio" name="shippingSpeed" value="standard" checked>
+                <span id="shipStdLabel">Standard (3-5 days)</span>
+                <strong id="shipStdPrice"></strong>
+              </label>
+              <label class="shipping-option__label">
+                <input type="radio" name="shippingSpeed" value="express">
+                <span id="shipExpLabel">Express (2-3 days)</span>
+                <strong id="shipExpPrice"></strong>
+              </label>
+            </div>
+          </div>
+
+          <div class="checkout__form-section">
+            <h2 id="coSec3">Payment</h2>
+            <div class="pay-methods" id="payMethods">
+              <label class="pay-method pay-method--selected">
+                <input type="radio" name="payment" value="card" checked>
+                <span class="pay-method__label" id="pmCard">Credit / Debit Card</span>
+                <span class="pay-method__icons">
+                  <span class="pay-method__icon">VISA</span>
+                  <span class="pay-method__icon">MC</span>
+                  <span class="pay-method__icon">AMEX</span>
+                </span>
+              </label>
+              <label class="pay-method">
+                <input type="radio" name="payment" value="paypal">
+                <span class="pay-method__label">PayPal</span>
+                <span class="pay-method__icons"><span class="pay-method__icon" style="background:#003087;color:#fff">PayPal</span></span>
+              </label>
+              <label class="pay-method">
+                <input type="radio" name="payment" value="applepay">
+                <span class="pay-method__label">Apple Pay</span>
+                <span class="pay-method__icons"><span class="pay-method__icon" style="background:#000;color:#fff">&#63743; Pay</span></span>
+              </label>
+              <label class="pay-method">
+                <input type="radio" name="payment" value="googlepay">
+                <span class="pay-method__label">Google Pay</span>
+                <span class="pay-method__icons"><span class="pay-method__icon">G Pay</span></span>
+              </label>
+              <label class="pay-method">
+                <input type="radio" name="payment" value="klarna">
+                <span class="pay-method__label">Klarna <span style="font-size:0.72rem;opacity:0.5">— Pay later</span></span>
+                <span class="pay-method__icons"><span class="pay-method__icon" style="background:#FFB3C7;color:#0A0A0A">Klarna</span></span>
+              </label>
+            </div>
+            <div class="card-fields" id="cardFields">
+              <div class="form-row form-row--full">
+                <div class="form-field">
+                  <label for="cardNumber" id="coLblCardNum">Card number</label>
+                  <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="cardExpiry" id="coLblExp">Expiry</label>
+                  <input type="text" id="cardExpiry" placeholder="MM / YY" maxlength="7">
+                </div>
+                <div class="form-field">
+                  <label for="cardCvc">CVC</label>
+                  <input type="text" id="cardCvc" placeholder="123" maxlength="4">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkout__summary" id="checkoutSummary">
+          <h3 id="coSumTitle">Order Summary</h3>
+          <div id="summaryItems"></div>
+          <div id="summaryTotals"></div>
+          <div class="checkout__place-btn">
+            <button class="btn btn--gold btn--lg btn--full" id="placeOrderBtn">Place Order</button>
+          </div>
+          <div class="checkout__free-hint" id="freeShipHint" style="display:none"></div>
+          <div class="checkout__badges">
+            <span>SSL Encrypted</span>
+            <span>100% Vegan</span>
+          </div>
+          <a href="index.html" class="checkout__continue" id="continueLink">&larr; Continue Shopping</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="order-success" id="orderSuccess">
+    <div class="order-success__inner">
+      <div class="order-success__check">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h2 id="successTitle">Thank You!</h2>
+      <p id="successText">Your order has been placed successfully. A confirmation email will be sent shortly.</p>
+      <a href="index.html" class="btn btn--gold" id="successBtn">Back to Home</a>
+    </div>
+  </div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    function lang() { return localStorage.getItem('amx_lang') || 'en'; }
+    function t(en, pl) { return lang() === 'pl' ? pl : en; }
+
+    var EU_CODES = ['DE','NL','FR','AT','BE','IT','ES','PT','GB','CH','SE','DK',
+      'NO','FI','IE','CZ','HU','GR','RO','BG','HR','SK','LT','LV','EE','SI','LU'];
+    var FREE_THRESHOLD = 200;
+
+    function getZone(code) {
+      if (code === 'PL') return 'poland';
+      if (EU_CODES.indexOf(code) !== -1) return 'europe';
+      return 'world';
+    }
+    function zoneStandard(zone) {
+      if (zone === 'poland') return 5;
+      if (zone === 'europe') return 10;
+      return 25;
+    }
+    function calcShipping(subtotal, hasSub, countryCode, isExpress) {
+      if (hasSub) return 0;
+      if (subtotal >= FREE_THRESHOLD) return 0;
+      var zone = getZone(countryCode);
+      if (isExpress && zone === 'poland') return 15;
+      return zoneStandard(zone);
+    }
+
+    var shippingOptionEl = document.getElementById('shippingOption');
+    var countryEl = document.getElementById('country');
+
+    function updateShippingToggle() {
+      var zone = getZone(countryEl.value);
+      shippingOptionEl.style.display = zone === 'poland' ? 'flex' : 'none';
+      document.getElementById('shipStdPrice').textContent = '\u20AC5';
+      document.getElementById('shipExpPrice').textContent = '\u20AC15';
+      document.getElementById('shipStdLabel').textContent = t('Standard (3\u20135 days)', 'Standardowa (3\u20135 dni)');
+      document.getElementById('shipExpLabel').textContent = t('Express (2\u20133 days)', 'Ekspres (2\u20133 dni)');
+    }
+
+    function getSelectedSpeed() {
+      var radios = document.querySelectorAll('input[name="shippingSpeed"]');
+      for (var i = 0; i < radios.length; i++) { if (radios[i].checked) return radios[i].value; }
+      return 'standard';
+    }
+
+    countryEl.addEventListener('change', function () { updateShippingToggle(); renderSummary(); });
+    shippingOptionEl.addEventListener('change', function () { renderSummary(); });
+
+    function renderSummary() {
+      var cart = AMX_getCart();
+      var P = AMX_PRODUCTS;
+      var itemsEl = document.getElementById('summaryItems');
+      var totalsEl = document.getElementById('summaryTotals');
+      var hintEl = document.getElementById('freeShipHint');
+
+      if (cart.length === 0) {
+        itemsEl.innerHTML = '<p style="color:rgba(255,255,255,0.4);padding:2rem 0;text-align:center">' + t('Cart is empty', 'Koszyk jest pusty') + '</p>';
+        totalsEl.innerHTML = '';
+        hintEl.style.display = 'none';
+        return;
+      }
+
+      var html = '';
+      var subtotal = 0;
+      cart.forEach(function (item) {
+        var p = P[item.productId];
+        if (!p) return;
+        var price = item.isSub ? p.priceSub : p.price;
+        var lineTotal = price * item.qty;
+        subtotal += lineTotal;
+        var pName = lang() === 'pl' ? p.namePl : p.name;
+        html +=
+          '<div class="summary-item">' +
+            '<img src="' + p.img + '" alt="" class="summary-item__img">' +
+            '<div class="summary-item__info">' +
+              '<strong>' + pName + '</strong>' +
+              '<span>' + (item.isSub ? t('6-mo subscription', 'Subskrypcja 6-mies.') : t('One-time', 'Jednorazowo')) + '</span>' +
+              '<div class="summary-item__controls">' +
+                '<button class="summary-item__qty-btn" data-key="' + item.key + '" data-delta="-1">&minus;</button>' +
+                '<span>' + item.qty + '</span>' +
+                '<button class="summary-item__qty-btn" data-key="' + item.key + '" data-delta="1">+</button>' +
+              '</div>' +
+            '</div>' +
+            '<div class="summary-item__right">' +
+              '<span class="summary-item__price">&euro;' + lineTotal + '</span>' +
+              '<button class="summary-item__remove" data-remove="' + item.key + '" aria-label="Remove">&times;</button>' +
+            '</div>' +
+          '</div>';
+      });
+      itemsEl.innerHTML = html;
+
+      itemsEl.querySelectorAll('.summary-item__qty-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          AMX_updateQty(btn.getAttribute('data-key'), parseInt(btn.getAttribute('data-delta')));
+          renderSummary();
+        });
+      });
+      itemsEl.querySelectorAll('.summary-item__remove').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          AMX_removeItem(btn.getAttribute('data-remove'));
+          renderSummary();
+        });
+      });
+
+      var hasSub = cart.some(function (i) { return i.isSub; });
+      var isExpress = getSelectedSpeed() === 'express';
+      var country = countryEl.value;
+      var shipping = calcShipping(subtotal, hasSub, country, isExpress);
+      var zone = getZone(country);
+      var baseShipping = zoneStandard(zone);
+      var total = subtotal + shipping;
+
+      var shippingLabel;
+      if (shipping === 0 && (hasSub || subtotal >= FREE_THRESHOLD)) {
+        var origCost = isExpress && zone === 'poland' ? 15 : baseShipping;
+        shippingLabel = '<s style="opacity:0.4">&euro;' + origCost + '</s> ' + t('Free', 'Gratis');
+      } else {
+        shippingLabel = '&euro;' + shipping;
+      }
+
+      totalsEl.innerHTML =
+        '<div class="summary-line"><span>' + t('Subtotal', 'Produkty') + '</span><span>&euro;' + subtotal + '</span></div>' +
+        '<div class="summary-line"><span>' + t('Shipping', 'Wysy\u0142ka') + '</span><span>' + shippingLabel + '</span></div>' +
+        '<div class="summary-line summary-line--total"><span>' + t('Total', 'Suma') + '</span><span>&euro;' + total + '</span></div>';
+
+      var remaining = FREE_THRESHOLD - subtotal;
+      if (remaining > 0 && !hasSub && shipping > 0) {
+        hintEl.innerHTML = '\uD83D\uDE9A ' + t('Add \u20AC' + remaining + ' more for free shipping!', 'Dodaj jeszcze \u20AC' + remaining + ' do darmowej wysy\u0142ki!');
+        hintEl.style.display = 'block';
+      } else {
+        hintEl.style.display = 'none';
+      }
+    }
+
+    var btnGuest = document.getElementById('btnGuest');
+    var btnAccount = document.getElementById('btnAccount');
+    var passRow = document.getElementById('passRow');
+    var passInput = document.getElementById('password');
+    var passConfirm = document.getElementById('passwordConfirm');
+
+    function setAccountMode(mode) {
+      var isAccount = mode === 'account';
+      btnGuest.classList.toggle('toggle-btn--active', !isAccount);
+      btnAccount.classList.toggle('toggle-btn--active', isAccount);
+      passRow.classList.toggle('checkout__pass-row--open', isAccount);
+      if (isAccount) { passInput.setAttribute('required', ''); passConfirm.setAttribute('required', ''); }
+      else { passInput.removeAttribute('required'); passConfirm.removeAttribute('required'); passInput.value = ''; passConfirm.value = ''; }
+    }
+
+    btnGuest.addEventListener('click', function () { setAccountMode('guest'); });
+    btnAccount.addEventListener('click', function () { setAccountMode('account'); });
+
+    document.querySelectorAll('.pay-method').forEach(function (el) {
+      el.addEventListener('click', function () {
+        document.querySelectorAll('.pay-method').forEach(function (m) { m.classList.remove('pay-method--selected'); });
+        el.classList.add('pay-method--selected');
+        document.getElementById('cardFields').style.display = el.querySelector('input[type=radio]').value === 'card' ? 'block' : 'none';
+      });
+    });
+
+    var cardInput = document.getElementById('cardNumber');
+    if (cardInput) {
+      cardInput.addEventListener('input', function () {
+        var v = cardInput.value.replace(/\D/g, '').substring(0, 16);
+        cardInput.value = v.replace(/(.{4})/g, '$1 ').trim();
+      });
+    }
+    var expiryInput = document.getElementById('cardExpiry');
+    if (expiryInput) {
+      expiryInput.addEventListener('input', function () {
+        var v = expiryInput.value.replace(/\D/g, '').substring(0, 4);
+        if (v.length >= 3) v = v.substring(0, 2) + ' / ' + v.substring(2);
+        expiryInput.value = v;
+      });
+    }
+
+    document.getElementById('placeOrderBtn').addEventListener('click', function () {
+      var email = document.getElementById('email').value;
+      var fname = document.getElementById('fname').value;
+      if (!email || !fname) { alert(t('Please fill in the required fields.', 'Prosz\u0119 uzupe\u0142ni\u0107 wymagane pola.')); return; }
+      var cart = AMX_getCart();
+      if (cart.length === 0) { alert(t('Your cart is empty.', 'Tw\u00F3j koszyk jest pusty.')); return; }
+      localStorage.removeItem('amx_cart');
+      document.getElementById('orderSuccess').classList.add('order-success--visible');
+    });
+
+    function localize() {
+      document.getElementById('coSec1').textContent = t('Contact', 'Kontakt');
+      document.getElementById('btnGuest').textContent = t('Guest', 'Go\u015B\u0107');
+      document.getElementById('btnAccount').textContent = t('Create Account', 'Za\u0142\u00F3\u017C Konto');
+      document.getElementById('passHint').textContent = t('Save your details for faster checkout next time.', 'Zapisz swoje dane, aby nast\u0119pnym razem kupowa\u0107 szybciej.');
+      document.getElementById('coLblPass').textContent = t('Password', 'Has\u0142o');
+      document.getElementById('coLblPassConfirm').textContent = t('Confirm password', 'Potwierd\u017A has\u0142o');
+      document.getElementById('coSec2').textContent = t('Shipping Address', 'Adres Dostawy');
+      document.getElementById('coSec3').textContent = t('Payment', 'P\u0142atno\u015B\u0107');
+      document.getElementById('coLblFirst').textContent = t('First name', 'Imi\u0119');
+      document.getElementById('coLblLast').textContent = t('Last name', 'Nazwisko');
+      document.getElementById('coLblAddr').textContent = t('Address', 'Adres');
+      document.getElementById('coLblCity').textContent = t('City', 'Miasto');
+      document.getElementById('coLblZip').textContent = t('ZIP / Postal code', 'Kod pocztowy');
+      document.getElementById('coLblCountry').textContent = t('Country', 'Kraj');
+      document.getElementById('coLblPhone').textContent = t('Phone (optional)', 'Telefon (opcjonalnie)');
+      document.getElementById('coLblCardNum').textContent = t('Card number', 'Numer karty');
+      document.getElementById('coLblExp').textContent = t('Expiry', 'Wa\u017Cno\u015B\u0107');
+      document.getElementById('pmCard').textContent = t('Credit / Debit Card', 'Karta kredytowa / debetowa');
+      document.getElementById('coSumTitle').textContent = t('Order Summary', 'Podsumowanie');
+      document.getElementById('placeOrderBtn').textContent = t('Place Order', 'Z\u0142\u00F3\u017C Zam\u00F3wienie');
+      document.getElementById('successTitle').textContent = t('Thank You!', 'Dzi\u0119kujemy!');
+      document.getElementById('successText').textContent = t('Your order has been placed successfully. A confirmation email will be sent shortly.', 'Twoje zam\u00F3wienie zosta\u0142o z\u0142o\u017Cone pomy\u015Blnie. Wkr\u00F3tce otrzymasz email z potwierdzeniem.');
+      document.getElementById('successBtn').textContent = t('Back to Home', 'Wr\u00F3\u0107 na Stron\u0119');
+      document.getElementById('continueLink').innerHTML = '&larr; ' + t('Continue Shopping', 'Kontynuuj Zakupy');
+      document.getElementById('ogPoland').label = t('Poland', 'Polska');
+      document.getElementById('ogEurope').label = t('Europe', 'Europa');
+      document.getElementById('ogWorld').label = t('Rest of World', 'Reszta \u015Awiata');
+      updateShippingToggle();
+      renderSummary();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      updateShippingToggle();
+      renderSummary();
+      localize();
+      var observer = new MutationObserver(function () { localize(); });
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    });
+  })();
+  </script>
+</body>
+</html>
